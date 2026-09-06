@@ -459,3 +459,55 @@ h3 {
     flex-direction: column;
   }
 }
+
+.download-with-preview {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: center;
+
+  padding: 32px 0;
+}
+
+.download-preview {
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+
+  background: #0a0a0a;
+}
+
+.download-preview img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.headshot-preview img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.download-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.download-info p {
+  margin-bottom: 20px;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+
+  .download-with-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .download-preview {
+    max-width: 320px;
+  }
+
+}
