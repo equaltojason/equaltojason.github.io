@@ -1,101 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal portfolio website template.">
-  <title>Page One | Jason A. Herrmann's Portfolio</title>
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Jason Herrmann senior project: embedded visual speech recognition using a lightweight CNN on STM32H7.">
+
+  <title>
+    Senior Project | Jason A. Herrmann's Portfolio
+  </title>
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-<header class="site-header">
-  <div class="container navbar">
-    <a class="brand" href="index.html">Jason A. Herrmann</a>
 
-    <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation">
+
+<body>
+
+
+<header class="site-header">
+
+  <div class="container navbar">
+
+    <a class="brand" href="index.html">
+      Jason A. Herrmann
+    </a>
+
+
+    <button
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-label="Open navigation">
       MENU
     </button>
 
+
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
 
-      <li class="dropdown">
-        <button class="dropdown-button" aria-expanded="false">Projects ▾</button>
-        <ul class="dropdown-menu">
-          <li><a href="page-one.html">My Senior Project</a></li>
-          <li><a href="page-two.html">Noisemaker PCB</a></li>
-          <li><a href="page-three.html">Coming Soon...</a></li>
-        </ul>
+      <li>
+        <a href="index.html">Home</a>
       </li>
 
-      <li class="dropdown">
-        <button class="dropdown-button" aria-expanded="false">Resources ▾</button>
-        <ul class="dropdown-menu">
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="downloads.html">Downloads</a></li>
-        </ul>
+      <li>
+        <a href="about.html">About</a>
       </li>
 
-      <li><a href="contact.html">Contact</a></li>
+
+      <li class="dropdown">
+
+        <button
+          class="dropdown-button"
+          aria-expanded="false">
+
+          Projects ▾
+
+        </button>
+
+        <ul class="dropdown-menu">
+
+          <li>
+            <a href="page-one.html">
+              My Senior Project
+            </a>
+          </li>
+
+          <li>
+            <a href="page-two.html">
+              Noisemaker PCB
+            </a>
+          </li>
+
+          <li>
+            <a href="page-three.html">
+              Coming Soon...
+            </a>
+          </li>
+
+        </ul>
+
+      </li>
+
+
+      <li class="dropdown">
+
+        <button
+          class="dropdown-button"
+          aria-expanded="false">
+
+          Resources ▾
+
+        </button>
+
+        <ul class="dropdown-menu">
+
+          <li>
+            <a href="gallery.html">
+              Gallery
+            </a>
+          </li>
+
+          <li>
+            <a href="downloads.html">
+              Downloads
+            </a>
+          </li>
+
+        </ul>
+
+      </li>
+
+
+      <li>
+        <a href="contact.html">
+          Contact
+        </a>
+      </li>
+
     </ul>
+
   </div>
+
 </header>
 
+
+
 <main>
+
+
+
 <section class="page-header">
+
   <div class="container">
-    <p class="kicker">PLACEHOLDER PAGE</p>
-    <h1>Page One</h1>
-    <p class="lead">
-      Use this file as a clean starting point for a project, topic, experience,
-      write-up, or any other page.
+
+    <p class="kicker">
+      Senior Project
     </p>
+
+    <h1>
+      VSR on Embedded Microcontroller
+    </h1>
+
+    <p class="lead">
+      A lightweight Visual Speech Recognition (commonly known as VSR or "lip reading") AI model
+      designed to classify visually distinct speech sounds
+      using a convolutional neural network running on
+      constrained STM32H7 embedded hardware.
+    </p>
+
   </div>
+
 </section>
+
 
 <section class="section">
+
   <div class="container hero-grid">
+
     <div>
-      <h2>Section One</h2>
-      <p>
-        Add your content here. You can duplicate this entire section if you want
-        a longer page.
+
+      <p class="kicker">
+        Project Overview
       </p>
+
+      <h2>
+        Visual Speech Recognition at the Edge
+      </h2>
+
+      <p>
+        Modern visual speech recognition systems often rely
+        on large ai models, large datasets, and GPU-class
+        computing resources.
+      </p>
+
+      <p>
+        My goal was to determine whether the problem could be
+        reduced enough to run meaningfully on a microcontroller.
+        Instead of performing complete word or sentence-level
+        lip reading, I developed a five-class visual phoneme
+        classifier using short sequences of grayscale mouth images.
+      </p>
+
     </div>
 
-    <div class="media-placeholder small">
-      IMAGE / DIAGRAM / SCREENSHOT AREA
-    </div>
+    <img src="assets/images/Screenshot 2026-09-09 at 9.59.16 PM.png" alt="transform image"
+
   </div>
+
 </section>
+
 
 <section class="section narrow">
+
   <div class="container">
-    <h2>Section Two</h2>
-    <p>
-      Another simple content area. Keep it, delete it, or change the layout.
+
+    <p class="kicker">
+      Design Challenge
     </p>
 
-    <div class="button-row">
-      <a class="button" href="#">Optional Link</a>
-      <a class="button secondary" href="downloads.html">Download Area</a>
-    </div>
+    <h2>
+      Reducing a GPU-scale problem
+    </h2>
+
+    <p>
+      Full-scale visual speech recognition systems typically use
+      large convolutional or recurrent neural networks operating
+      on complete video sequences.
+    </p>
+
+    <p>
+      My design instead focused on reducing both the input data
+      and the neural network. Video was cropped to the mouth region,
+      converted to grayscale, divided into short temporal windows,
+      and represented as compact NumPy arrays.
+    </p>
+
+    <p>
+      This significantly reduced the amount of information that
+      needed to be processed while preserving the mouth motion
+      required for classification.
+    </p>
+
   </div>
+
 </section>
+
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <p class="kicker">
+        Approach
+      </p>
+
+      <h2>
+        System Pipeline
+      </h2>
+
+      <p class="lead">
+        The project combined computer vision, speech processing,
+        machine learning, and embedded deployment.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+      <article class="card">
+
+        <h3>
+          1. Dataset Processing
+        </h3>
+
+        <p>
+          GRID corpus video was processed using MediaPipe
+          facial landmarks and OpenCV to isolate the mouth
+          region from each speaker.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <h3>
+          2. Speech Alignment
+        </h3>
+
+        <p>
+          Audio and text transcripts were processed with
+          Montreal Forced Aligner to obtain phoneme-level
+          timestamps for each utterance.
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <h3>
+          3. CNN Classification
+        </h3>
+
+        <p>
+          Short grayscale frame sequences were classified
+          using lightweight 2D convolutional AI neural networks
+          trained with TensorFlow and Keras.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<section class="section">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <p class="kicker">
+        AI Neural Network
+      </p>
+
+      <h2>
+        Lightweight CNN Architecture
+      </h2>
+
+      <p>
+        The network used three convolutional stages followed
+        by a compact dense classifier.
+      </p>
+
+      <p>
+        I tested multiple input resolutions, temporal depths,
+        and model widths to evaluate the tradeoff between
+        classification accuracy and embedded resource usage.
+      </p>
+
+      <p>
+        Five visually distinct output classes were used:
+        M, SH, O, E, and FV.
+      </p>
+
+    </div>
+
+    <img src="assets/images/Screenshot 2026-09-09 at 10.03.51 PM.png" alt="transform image"
+
+  </div>
+
+</section>
+
+
+
+<section class="section">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <p class="kicker">
+        Embedded Deployment
+      </p>
+
+      <h2>
+        STM32H7
+      </h2>
+
+      <p>
+        Selected trained networks were converted to INT8
+        TensorFlow Lite models and imported through X-CUBE-AI
+        in STM32CubeIDE.
+      </p>
+
+      <p>
+        Quantization reduced the model memory requirements
+        enough for inference to run directly on the STM32H7
+        without GPU acceleration or cloud computing.
+      </p>
+
+    </div>
+
+
+    <img src="assets/images/Screenshot 2026-09-09 at 9.51.16 PM.png" alt="STM32H7 Image">
+
+  </div>
+
+</section>
+
+
+
+<section class="section narrow">
+
+  <div class="container">
+
+    <p class="kicker">
+      Results
+    </p>
+
+    <h2>
+      82.46% Best Offline Accuracy
+    </h2>
+
+    <p>
+      The best offline CNN configuration achieved
+      82.46% test accuracy on the five-class visual
+      speech classification task.
+    </p>
+
+    <p>
+      A 32x32x7 Medium model was successfully quantized
+      and deployed to the STM32H7. The embedded model
+      required approximately 76 KB of flash and 20 KB
+      of RAM.
+    </p>
+
+    <p>
+      The results demonstrated that a carefully constrained
+      visual speech recognition system could achieve useful
+      classification performance while remaining small enough
+      for microcontroller deployment.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="section narrow">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <p class="kicker">
+        Project Documents
+      </p>
+
+      <h2>
+        Presentation & Report
+      </h2>
+
+      <p class="lead">
+        Full documentation from the project is available below.
+      </p>
+
+    </div>
+
+
+    <div class="download-list">
+
+
+
+
+      <div class="download-item">
+
+        <div>
+
+          <h3>
+            Final Presentation
+          </h3>
+
+          <p>
+            Senior project presentation covering the motivation,
+            preprocessing pipeline, CNN architecture, embedded
+            deployment, and results.
+          </p>
+
+        </div>
+
+        <a
+          class="button"
+          href="assets/images/Final Presentation Jason Herrmann Senior Project.pdf"
+          download>
+
+          Download
+
+        </a>
+
+      </div>
+
+
+
+
+
+      <div class="download-item">
+
+        <div>
+
+          <h3>
+            Final Report
+          </h3>
+
+          <p>
+            Full technical report describing system design,
+            implementation, methodology, results, and conclusions.
+          </p>
+
+        </div>
+
+        <a
+          class="button"
+          href="assets/images/ECE 113D Final Report.pdf"
+          download>
+
+          Download
+
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
 </main>
 
+
+
+
 <footer class="site-footer">
+
   <div class="container footer-inner">
-    <span>© Jason A. Herrmann 2026</span>
+
+    <span>
+      © Jason A. Herrmann 2026
+    </span>
+
     <div class="footer-links">
-      <a href="mailto:jasonaherrmann12@gmail.com">jasonaherrmann12@gmail.com</a>
-      <a href="https://www.linkedin.com/in/jason-a-herrmann/">LinkedIn</a>
-      <a> +1 (949) 633-7194 </a>
+
+      <a href="mailto:jasonaherrmann12@gmail.com">
+        jasonaherrmann12@gmail.com
+      </a>
+
+      <a href="https://www.linkedin.com/in/jason-a-herrmann/">
+        LinkedIn
+      </a>
+
+      <a>
+        +1 (949) 633-7194
+      </a>
+
     </div>
+
   </div>
+
 </footer>
 
+
 <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
