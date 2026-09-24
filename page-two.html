@@ -104,9 +104,10 @@
         </h3>
 
         <p>
-          GRID corpus video was processed using MediaPipe
-          facial landmarks and OpenCV to isolate the mouth
-          region from each speaker.
+          I used my STM32f405 Feather microcontroller to 
+          prototype the device on a breadboard. It has 8 tones
+          to switch between using a button and a timer to play
+          the sounds intermittently.
         </p>
 
       </article>
@@ -115,13 +116,13 @@
       <article class="card">
 
         <h3>
-          2. Speech Alignment
+          2. Schematic design
         </h3>
 
         <p>
-          Audio and text transcripts were processed with
-          Montreal Forced Aligner to obtain phoneme-level
-          timestamps for each utterance.
+          I used KiCAD to design the schematic. I found parts 
+          on Digikey that matched my needs and imoported them into
+          a KiCAD library.
         </p>
 
       </article>
@@ -130,13 +131,14 @@
       <article class="card">
 
         <h3>
-          3. CNN Classification
+          3. PCB Layout design
         </h3>
 
         <p>
-          Short grayscale frame sequences were classified
-          using lightweight 2D convolutional AI neural networks
-          trained with TensorFlow and Keras.
+          I design the PCB layout in KiCAD. I used a 2-layer design 
+          with a ground plane on the bottom layer. I also added a 
+          silkscreen layer to label the components and make it 
+          easier to assemble.
         </p>
 
       </article>
@@ -148,20 +150,102 @@
 
 </section>
 
-<section class="section narrow">
-  <div class="container">
-    <h2>Section Two</h2>
-    <p>
-      Another simple content area. Keep it, delete it, or change the layout.
-    </p>
+<section class="section">
 
-    <div class="button-row">
-      <a class="button" href="#">Optional Link</a>
-      <a class="button secondary" href="downloads.html">Download Area</a>
+  <div class="container hero-grid">
+
+    <div>
+
+      <p class="kicker">
+        Soldering
+      </p>
+
+      <h2>
+        Adding pins to my STM32f405 Feather
+      </h2>
+
+      <p>
+        My sister was nice enough to help me solder the connections
+        onto the board.
+      </p>
+
     </div>
+
+
+    <img src="assets/images/0FCF557B-47FF-41EF-AE68-E4C12094D708_1_105_c.jpeg" alt="sistersoldering">
+
   </div>
+
 </section>
-</main>
+
+<section class="section">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <p class="kicker">
+        Breadboard Protoyping
+      </p>
+
+      <h2>
+        Feather Development
+      </h2>
+
+      <p>
+        I wired my board with a button and speaker to
+        test my code. I also utilized the onboard multicolor LED
+      </p>
+
+      <p>
+        I used PWM audio to generate the tones and the button to switch between them.
+        I also used the onboard multicolor LED to indicate which tone was currently 
+        selected. All of this software was coded on STM32CubeIDE and flashed onto the board
+        using STM32CubeProgrammer. 
+      </p>
+
+    </div>
+
+
+    <img src="assets/images/DF6E9918-CD70-4D0B-B8E3-2183D3B954D6_1_105_c.jpeg" alt="breadboard">
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <p class="kicker">
+        Schematic Design
+      </p>
+
+      <h2>
+        KiCAD with Digikey Library
+      </h2>
+
+      <p>
+        I chose my PIC by considering the requirements of the project and choosing a microcontroller that met those requirements. 
+        I the chose additional components using AI suggestions. I downloaded all the footprints and symbols off of Digikey
+        and imported them to a KiCAD library.
+      </p>
+
+      <p>
+        The PIC I chose was the PIC12F1840 for its low-power capabilities and small footprint.
+        I also added a way to program the board with a six-pin header. 
+      </p>
+
+    </div>
+
+
+    <img src="assets/images/Screenshot 2026-09-23 at 10.28.45 PM.png" alt="schematic">
+
+  </div>
+
+</section>
 
 <footer class="site-footer">
   <div class="container footer-inner">
